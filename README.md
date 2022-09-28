@@ -1,7 +1,7 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
 Отчет по лабораторной работе #1 выполнил(а):
-- Иванова Ивана Варкравтовна
-- РИ000024
+- Зубов Алексей Иванович
+- РИ-110946
 Отметка о выполнении заданий (заполняется студентом):
 
 | Задание | Выполнение | Баллы |
@@ -17,9 +17,6 @@
 - к.э.н., доцент Панов М.А.
 - ст. преп., Фадеев В.О.
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Структура отчета
 
@@ -38,101 +35,83 @@
 Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
 
 ## Задание 1
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
-Ход работы:
-- Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
+### Написать программы Hello World на Python и Unity. Для Python в отчете привести скриншоты с демонстрацией сохранения документа 
+google.colab на свой диск с запуском программы, выводящейсообщение Hello World.
 
-```py
+![Hello python](https://user-images.githubusercontent.com/49406824/192856586-83203412-a8ec-4f16-b126-ce33bc521945.png)
 
-In [ ]:
-#Import the required modules, numpy for calculation, and Matplotlib for drawing
-import numpy as np
-import matplotlib.pyplot as plt
-#This code is for jupyter Notebook only
-%matplotlib inline
+- Для Unity в отчете привести скришноты вывода сообщения HelloWorld в консоль.
 
-# define data, and change list to array
-x = [3,21,22,34,54,34,55,67,89,99]
-x = np.array(x)
-y = [2,22,24,65,79,82,55,130,150,199]
-y = np.array(y)
+![Hello unity](https://user-images.githubusercontent.com/49406824/192856622-255ec1e9-c468-4d14-9740-5af7abe803dd.png)
 
-#Show the effect of a scatter plot
-plt.scatter(x,y)
-
-```
-
-- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
 
 
 ## Задание 2
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+### В разделе «ход работы» пошагово выполнить каждый пункт сописанием и примером реализации задачи по теме лабораторной работы.
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+Ход работы.
+1 Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и 
+данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при 
+использовании умножения и сложения.
 
-```py
+![2 1](https://user-images.githubusercontent.com/49406824/192856805-c0340e55-c7d4-4dc0-bbaf-a4ac60cfea3d.png)
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+2 Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь  
+среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
 
-```
+![2 2](https://user-images.githubusercontent.com/49406824/192856911-b4c3fb36-a682-48f2-9dc3-32016933fe0b.png)
+
+3 Начать итерацию
+Шаг 1 Инициализация и модель итеративной оптимизации
+
+![2 3](https://user-images.githubusercontent.com/49406824/192856975-b7288676-3a89-4d2f-8a1c-7ee8e0448cc8.png)
+
+Шаг 2 На второй итерации отображаются значения параметров, значения потерь и эффекты визуализации после итерации
+
+![2 4](https://user-images.githubusercontent.com/49406824/192857031-81b48fcd-a939-4747-9d0d-395ad3e58df8.png)
+
+Шаг 3 Третья итерация показывает значения параметров, значения потерь и визуализацию после итерации
+
+![2 5](https://user-images.githubusercontent.com/49406824/192857067-2ad3194b-9721-435b-a323-832653c41952.png)
+
+Шаг 4 На четвертой итерации отображаются значения параметров, значения потерь и эффекты визуализации
+
+![2 6](https://user-images.githubusercontent.com/49406824/192857100-fa94b1da-9f5d-4ea2-8a5d-c2f7014e1dc6.png)
+
+Шаг 5 Пятая итерация показывает значение параметра, значение потерь и эффект визуализации после итерации
+
+![2 7](https://user-images.githubusercontent.com/49406824/192857176-c1e8be7d-5e45-4eb3-8a2f-9319698c983c.png)
+
+Шаг 6 10000-я итерация, показывающая значения параметров, потери и визуализацию после итерации
+
+![2 8](https://user-images.githubusercontent.com/49406824/192857204-eeb12078-0abc-4577-a45a-4b9dcb03aab9.png)
+
 
 ## Задание 3
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
+### Изучить код на Python и ответить на вопросы:
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+- Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который
+подтверждает ваш ответ.
+Loss будет убывать. Так как при значительном изменении количества операций предсказанное значение будет все ближе подбираться к реальному, а
+разница этих значений и есть loss. Это можно наглядно увидеть при сравнении oss для 10000 и 1000000 итераций.
 
-```py
+![3 1](https://user-images.githubusercontent.com/49406824/192857420-a21fc698-8819-4ceb-b81b-061862b2feab.png)
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+- Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента
+можете изменить значение параметра.
 
-```
+Lr - это learning rate, коэффициент скорости обучения. Он влияет на точность графика. Чем меньше параметр - тем выше точность. Это можно увидеть на примерах ниже:
+
+![3 2](https://user-images.githubusercontent.com/49406824/192857488-33b06c86-15ca-4203-b8f5-6c6f31833349.png)
+
+![3 3](https://user-images.githubusercontent.com/49406824/192857495-03139b7f-5a8a-4513-8492-930778aba164.png)
+
 
 ## Выводы
 
-Абзац умных слов о том, что было сделано и что было узнано.
+В процессе лабораторной работы я установил Anaconda, VSCode, Unity. Произвел настройку Unity в связке с VSCode. Реализовал программы "Hello World" на языках: Python и C#. Ознакомился с основными операторами Python и библиотеками numpy, matplotlib на примере линейной регрессии.
+Проанализировал код который был дан и наконец создал свой репозиторий на GitHub.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
 
 ## Powered by
 
